@@ -252,3 +252,116 @@ Climbing Stairs
 #     return ways
 
 # print(climb_stair(5))    
+
+'''
+Rotate 3*3 matrix
+'''
+
+# import numpy as np
+# matrix=np.array([[1,2,3],[4,5,6],[7,8,9]])
+# print(matrix)
+# n=len(matrix)
+
+# j=0
+# for i in range(0,n-1):
+#     top=matrix[j][i]
+#     matrix[j][i]=matrix[n-i-1][j]
+#     matrix[n-i-1][j]=matrix[n-1][n-i-1]
+#     matrix[n-1][n-i-1]=matrix[i][n-1]
+#     matrix[i][n-1]=top
+    
+# print(matrix)
+
+'''
+Find missing element
+'''
+
+# def missingNumber(nums):
+#     """
+#     :type nums: List[int]
+#     :rtype: int
+#     """
+    
+#     n=len(nums)
+#     expected_sum=n*(n+1)/2
+#     sum_now=sum(nums)
+#     return expected_sum-sum_now
+
+# print(missingNumber([3,0,1]))
+
+'''
+Move Zeroes
+'''
+
+# def moveZeros(nums):
+    
+#     idx=0
+#     for i in range(len(nums)):
+#         if nums[i]!=0:
+#             nums[idx]=nums[i]
+#             idx+=1
+        
+#     return nums[0:idx]
+
+# print(moveZeros([1,0,2,0,0,3,0]))
+
+
+'''
+Max subarray
+'''
+
+# def max_subarray(nums):
+    
+#     total=0
+#     max_sum=-100
+#     for i in range(len(nums)):
+#         total+=nums[i]
+        
+#         if max_sum<total:
+#             max_sum=total
+        
+#         if total<0:
+#             total=0
+            
+#     return max_sum
+
+'''
+Container with most water
+'''
+
+# Brute Force O(n^2)
+
+# def maxArea(height):
+    
+#     maxarea=0
+#     for i in range(len(height)):
+#         for j in range(1,len(height)):
+#             ht=min(height[i],height[j])
+#             wid=abs(i-j)
+#             area=ht*wid
+#             if maxarea<area:
+#                 maxarea=area
+#     return maxarea
+
+# print(maxArea([1,1])) 
+
+# Optimized solution O(n)
+
+# def maxArea(height):
+#     maxarea=0
+#     n=len(height)
+#     start=0
+#     end=n-1
+
+#     while start!=end:
+        
+#         area=min(height[start],height[end])*abs(end-start)
+#         maxarea=max(area,maxarea)
+#         if height[start]<height[end]:
+#             start+=1
+#         else:
+#             end-=1
+
+#     return(maxarea)
+
+# print(maxArea([1,8,6,2,5,4,8,3,7]))
