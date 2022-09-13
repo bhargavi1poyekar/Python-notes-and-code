@@ -365,3 +365,40 @@ Container with most water
 #     return(maxarea)
 
 # print(maxArea([1,8,6,2,5,4,8,3,7]))
+'''
+Search Insert position
+'''
+
+## Binary Search 
+
+# def searchInsert(, nums, target):
+#     """
+#     :type nums: List[int]
+#     :type target: int
+#     :rtype: int
+#     """
+    
+#     if target<nums[0]:
+#         return 0
+#     elif target>nums[-1]:
+#         return len(nums)
+    
+#     left=0
+#     right=len(nums)-1
+#     mid=(len(nums)-1)//2
+    
+#     while left-right!=0:
+        
+#         if nums[mid]==target:
+#             return mid
+#         elif nums[mid]>target:
+#             right=mid
+#         else:
+#             left=mid+1
+            
+#         mid=abs(right+left)//2
+#     return mid
+# print(searchInsert([1,3,5,6],7))
+            
+            
+        
