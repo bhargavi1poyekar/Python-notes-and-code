@@ -400,5 +400,91 @@ Search Insert position
 #     return mid
 # print(searchInsert([1,3,5,6],7))
             
-            
+'''
+Majority Element
+'''
+# def majorityElement(nums):
+#     """
+#     :type nums: List[int]
+#     :rtype: int
+#     """
+#     count={}
+    
+#     for i in nums:
+#         if i in count:
+#             count[i]+=1
+#         else:
+#             count[i]=1
+    
+#     limit=len(nums)/2
+    
+#     for i in count:
+#         if count[i]>limit:
+#             return i
+
+# print(majorityElement([1,1,1,2,2]))
+
+'''
+Merge Sorted Array
+'''
+# def merge( nums1, m, nums2, n):
+#     """
+#     :type nums1: List[int]
+#     :type m: int
+#     :type nums2: List[int]
+#     :type n: int
+#     :rtype: None Do not return anything, modify nums1 in-place instead.
+#     """
+
+        # Use Insertion Sort  
+#     for i in range(n):
         
+#         key=nums2[i]
+        
+#         j= m+i-1
+        
+#         while j>=0 and key<nums1[j]:
+            
+#             nums1[j+1]=nums1[j]
+#             j-=1
+        
+#         nums1[j+1]=key
+#     return nums1     
+
+# print(merge([1,2,3,0,0,0], 3, [2,5,6], 3))       
+        
+'''
+Intersection of 2 Arrays
+'''
+
+# def intersection(nums1, nums2):
+#     """
+#     :type nums1: List[int]
+#     :type nums2: List[int]
+#     :rtype: List[int]
+#     """
+#     inter=[]
+#     for i in range(len(nums1)):
+#         if nums1[i] in nums2 and nums1[i] not in inter:
+#             inter.append(nums1[i])
+    
+#     return inter
+
+'''
+Minimum Sum of Four Digit Number After Splitting Digits
+'''
+
+def minimumSum(num):
+    """
+    :type num: int
+    :rtype: int
+    """
+    digits=[int(i) for i in str(num)]
+    digits.sort()
+    num1=digits[0]*10+digits[3]
+    
+    num2=digits[1]*10+digits[2]
+    
+    return num1+num2
+print(minimumSum(1234))
+
