@@ -474,17 +474,72 @@ Intersection of 2 Arrays
 Minimum Sum of Four Digit Number After Splitting Digits
 '''
 
-def minimumSum(num):
-    """
-    :type num: int
-    :rtype: int
-    """
-    digits=[int(i) for i in str(num)]
-    digits.sort()
-    num1=digits[0]*10+digits[3]
+# def minimumSum(num):
+#     """
+#     :type num: int
+#     :rtype: int
+#     """
+#     digits=[int(i) for i in str(num)]
+#     digits.sort()
+#     num1=digits[0]*10+digits[3]
     
-    num2=digits[1]*10+digits[2]
+#     num2=digits[1]*10+digits[2]
     
-    return num1+num2
-print(minimumSum(1234))
+#     return num1+num2
+# print(minimumSum(1234))
+
+
+'''
+How many numbers are smaller than the correct number?
+'''
+# def smallerNumbersThanCurrent(nums):
+    
+#     sort_nums=sorted(nums) # sort and store in diff arr
+#     count_dict={} # hash to store the count of nums smaller
+#     n=len(nums) 
+#     count_dict[sort_nums[0]]=0 # first count
+#     for i in range(1,n):
+#         if sort_nums[i]!=sort_nums[i-1]: # if both are same, count is not written
+#             count_dict[sort_nums[i]]=i # for unique elements, count is index 
+
+#     fin_count=[0]*n 
+#     for i in range(n): # sort the count acc to nums
+#         fin_count[i]=count_dict[nums[i]]
+#     return fin_count
+
+# print(smallerNumbersThanCurrent([8,1,2,2,3]))
+
+'''
+75-Day
+'''
+# # Day 1- Array- Running Sum
+
+# def runningSum(nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[int]
+#         """
+#         sum=[0]*len(nums)
+#         sum[0]=nums[0]
+#         for i in range(1,len(nums)):
+#                 sum[i]=sum[i-1]+nums[i]
+
+# # Day 1- Find Pivot Index
+
+# def pivotIndex(self, nums):
+#         # nums=[-1,-1,0,1,1,-1]
+#         n=len(nums)
+#         leftsum=[0]*(n+1)
+        
+#         leftsum[0]=0
+#         for i in range(1,n+1):
+#             leftsum[i]=leftsum[i-1]+nums[i-1]
+        
+#         for i in range(n):
+#             if leftsum[i]==leftsum[n]-leftsum[i+1]:
+#                 return i
+#         if leftsum[n-1]==0:
+#             return n-1
+#         return -1
+
 
