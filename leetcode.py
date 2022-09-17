@@ -510,6 +510,53 @@ How many numbers are smaller than the correct number?
 # print(smallerNumbersThanCurrent([8,1,2,2,3]))
 
 '''
+Sorting the Sentence
+'''
+
+
+# from collections import OrderedDict
+# def sortSentence(s):
+#         """
+#         :type s: str
+#         :rtype: str
+#         """
+#         sent_list=s.split()
+    
+#         position={}
+#         for i in range(len(sent_list)):
+#                 position[sent_list[i][-1]]=i
+        
+#         sorted_pos=OrderedDict(sorted(position.items()))
+        
+#         sort_sent=[]
+#         for i in sorted_pos:
+#                 sort_sent.append(sent_list[sorted_pos[i]][:-1])
+        
+#         return ' '.join(sort_sent)
+
+
+# print(sortSentence('is2 sentence4 This1 a3'))
+
+'''
+Build Array from Permutation
+'''
+# def buildArray(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[int]
+#         """
+#         # ans=[0]*len(nums)
+
+#         # for i in range(len(nums)):
+#         #     ans[i]=nums[nums[i]]
+
+#         #         ans=[nums[nums[i]] for i in range(len(nums))]
+
+#         return [nums[i] for i in nums]
+
+
+
+'''
 75-Day
 '''
 # # Day 1- Array- Running Sum
@@ -542,4 +589,82 @@ How many numbers are smaller than the correct number?
 #             return n-1
 #         return -1
 
+# Day -2 Strings
 
+# Isomorphic Strings
+
+# def isIsomorphic(s,t):
+#         s_idx=[]
+#         t_idx=[]
+        
+#         for i in s:               
+#                 s_idx.append(s.index(i)) #adds index of first occurence of letter
+#         for i in t:
+#                 t_idx.append(t.index(i))
+#         if s_idx==t_idx:
+#                 return True
+#         return False
+              
+# print(isIsomorphic('paper','title')) 
+
+# # is Subsequence
+
+# def isSubsequence(s, t):
+
+#         s_ptr=0
+#         t_ptr=0
+        
+#         while s_ptr<len(s) and t_ptr<len(t):
+            
+#             if s[s_ptr]==t[t_ptr]:
+#                 s_ptr+=1
+#             t_ptr+=1
+        
+#         if s_ptr==len(s):
+#             return True
+#         return False
+
+# Day 3- Linked List
+
+# Merge 2 LL:
+# def mergeTwoLists(list1, list2):
+#         """
+#         :type list1: Optional[ListNode]
+#         :type list2: Optional[ListNode]
+#         :rtype: Optional[ListNode]
+#         """
+#         cur = dummy = ListNode()
+#         while list1 and list2:               
+#         if list1.val <= list2.val:
+#                 cur.next = list1
+#                 list1, cur = list1.next, list1
+#         else:
+#                 cur.next = list2
+#                 list2, cur = list2.next, list2
+                
+#         if list1 or list2:
+#         cur.next = list1 if list1 else list2
+        
+#         return dummy.next
+
+
+#  Reverse Linked List
+
+# def reverseList(head):
+#     """
+#     :type head: ListNode
+#     :rtype: ListNode
+#     """
+    
+#     prev=next=None
+#     curr=head
+    
+#     while curr:
+        
+#         next=curr.next
+#         curr.next=prev
+#         prev=curr
+#         curr=next
+    
+#     head=prev
+#     return head
