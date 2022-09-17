@@ -68,11 +68,10 @@ Preorder - vlr
 Inorder - lvr
 Postorder- lrv
 
+BFS: 
+LevelOrder Traversal
+
 '''
-
-
-from logging import root
-
 
 class TreeNode:
     def __init__(self, data):
@@ -85,14 +84,17 @@ Hot=TreeNode('Hot')
 Cold=TreeNode('Cold')
 newBT.leftChild=Hot
 newBT.rightChild=Cold
+Tea=TreeNode('tea')
+Coffee=TreeNode('coffee')
+Hot.leftChild=Tea
+Hot.rightChild=Coffee
 
-
-# def preorder(rootNode): # VLR
-#     if not rootNode:
-#         return
-#     print(rootNode.data)
-#     preorder(rootNode.leftChild)
-#     preorder(rootNode.rightChild)
+def preorder(rootNode): # VLR
+    if rootNode==None:
+        return
+    print(rootNode.data)
+    preorder(rootNode.leftChild)
+    preorder(rootNode.rightChild)
 
 # preorder(newBT)
 
@@ -105,11 +107,25 @@ newBT.rightChild=Cold
 
 # inorder(newBT)
 
-def postorder(rootNode): # LRV
-    if not rootNode:
-        return
-    postorder(rootNode.leftChild)
-    print(rootNode.data)
-    postorder(rootNode.rightChild)
+# def postorder(rootNode): # LRV
+#     if not rootNode:
+#         return
+#     postorder(rootNode.leftChild)
+#     print(rootNode.data)
+#     postorder(rootNode.rightChild)
 
-postorder(newBT)
+# postorder(newBT)
+
+def SearchBT(root,val):
+    
+    if not root:
+        return
+    if root.data==val:
+        print("Item Found")
+        return
+    SearchBT(root.leftChild,val)
+    SearchBT(root.rightChild,val)
+
+# preorder(newBT)
+if(SearchBT(newBT,'Drink')==None):
+    print('Not Found')

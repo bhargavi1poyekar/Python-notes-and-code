@@ -554,8 +554,56 @@ Build Array from Permutation
 
 #         return [nums[i] for i in nums]
 
+'''
+Number Of good Pairs
+'''
+# def numIdenticalPairs(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: int
+#         """
+#         count=0
+#         count_hash=Counter(nums)
+#         for i in count_hash:
+#             count+=count_hash[i]*(count_hash[i]-1)//2
+        
+#         return count
 
+'''
+Kids with greatest Number Of Candies:
+'''
 
+# def kidsWithCandies(self, candies, extraCandies):
+        
+#         max_candies=max(candies)
+        
+#         ans=[]
+#         for i in candies:
+#             if i+extraCandies>=max_candies:
+#                 ans.append(True)
+#             else:
+#                 ans.append(False)
+            
+#         return ans
+
+'''
+Decompress Run-Length Encoded List
+'''
+# def decompressRLElist(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[int]
+#         """
+#         ans=[]
+#         i=0
+#         # if len(nums)<=2:
+#         #     ans.extend([nums[(2*i)+1]]*nums[2*i])
+#         for i in range(0,len(nums)-1,2):
+#             ans.extend([nums[i+1]]*nums[i])
+            
+            
+        
+#         return(ans)
 '''
 75-Day
 '''
@@ -668,3 +716,5 @@ Build Array from Permutation
     
 #     head=prev
 #     return head
+
+
