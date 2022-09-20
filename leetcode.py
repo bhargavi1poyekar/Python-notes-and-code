@@ -737,3 +737,58 @@ Decompress Run-Length Encoded List
 #                         break
 
 #         return fir
+
+# Linked List Cycle: return the index of beginning of cycle 
+
+# def detectCycle(self, head):
+#         """
+#         :type head: ListNode
+#         :rtype: ListNode
+#         """
+        
+#         if not head or not head.next:
+#             return None
+        
+#         slow=fast=head
+        
+#         while slow and slow.next and fast.next and fast.next.next:
+#             slow=slow.next
+#             fast=fast.next.next
+            
+#             if slow==fast:
+#                 break
+            
+#             if not slow or not fast:
+#                 return None
+#         if not slow or not slow.next or not fast.next or not fast.next.next:
+#             return None
+#         while slow!=head:
+#             head=head.next
+#             slow=slow.next
+#         return head
+
+# Similar to detecting cycle using floyds algo, just at the end, make head
+# and slow meet to get the beginning of cycle.
+        
+# Day 5- Greedy Algorithm
+
+# def maxProfit(self, prices):
+#         """
+#         :type prices: List[int]
+#         :rtype: int
+#         """
+
+#         i=0
+#         j=1
+#         max_profit=0
+
+#         while j<len(prices):
+                
+#                 if prices[i]<=prices[j]:
+#                 max_profit=max(max_profit,prices[j]-prices[i])
+#                 else:
+#                 i=j
+#                 j+=1
+
+#         return max_profit
+

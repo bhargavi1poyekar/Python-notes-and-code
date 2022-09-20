@@ -137,7 +137,7 @@ Reverse Linked List
 #     return head
         
 '''
-Detect a cycle in Linked List
+Detect a cycle in Linked List- Floyd's Cycle Algo
 '''
 # def hasCycle(self, head):
 #     """
