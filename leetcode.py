@@ -600,10 +600,10 @@ Decompress Run-Length Encoded List
 #         #     ans.extend([nums[(2*i)+1]]*nums[2*i])
 #         for i in range(0,len(nums)-1,2):
 #             ans.extend([nums[i+1]]*nums[i])
-            
-            
         
 #         return(ans)
+
+
 '''
 75-Day
 '''
@@ -717,4 +717,23 @@ Decompress Run-Length Encoded List
 #     head=prev
 #     return head
 
+# Day 4- Linked List
 
+# Middle of a Linked List
+
+# def middleNode(self, head):
+#         """
+#         :type head: ListNode
+#         :rtype: ListNode
+#         """
+#         fir=sec=head
+
+#         while sec!=None:
+#                 if sec.next!=None:
+#                         print(sec)
+#                         fir=fir.next
+#                         sec=sec.next.next
+#                 else:
+#                         break
+
+#         return fir

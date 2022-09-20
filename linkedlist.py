@@ -117,25 +117,63 @@
 '''
 Reverse Linked List
 '''
-def reverseList(head):
-    """
-    :type head: ListNode
-    :rtype: ListNode
-    """
+# def reverseList(head):
+#     """
+#     :type head: ListNode
+#     :rtype: ListNode
+#     """
     
-    prev=next=None
-    curr=head
+#     prev=next=None
+#     curr=head
     
-    while curr:
+#     while curr:
         
-        next=curr.next
-        curr.next=prev
-        prev=curr
-        curr=next
+#         next=curr.next
+#         curr.next=prev
+#         prev=curr
+#         curr=next
     
-    head=prev
-    return head
+#     head=prev
+#     return head
         
+'''
+Detect a cycle in Linked List
+'''
+# def hasCycle(self, head):
+#     """
+#     :type head: ListNode
+#     :rtype: bool
+#     """
+    
+#     slow=fast=head
+    
+#     while slow and slow.next and fast.next and fast.next.next:
+#         slow=slow.next
+#         fast=fast.next.next
+#         if slow==fast:
+#             return True
+#     return False
+
+'''
+Middle Of a Linked List
+'''
+
+# def middleNode(self, head):
+#         """
+#         :type head: ListNode
+#         :rtype: ListNode
+#         """
+#         fir=sec=head
+
+#         while sec!=None:
+#                 if sec.next!=None:
+#                         print(sec)
+#                         fir=fir.next
+#                         sec=sec.next.next
+#                 else:
+#                         break
+
+#         return fir
 
 
 
