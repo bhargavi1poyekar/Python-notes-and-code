@@ -605,190 +605,73 @@ Decompress Run-Length Encoded List
 
 
 '''
-75-Day
+Sum of Even Numbers After Queries
 '''
-# # Day 1- Array- Running Sum
+# Find even sum of nums in the start, and then only change the even sum when nums is changing 
 
-# def runningSum(nums):
+# def sumEvenAfterQueries(nums, queries):
 #         """
 #         :type nums: List[int]
+#         :type queries: List[List[int]]
 #         :rtype: List[int]
 #         """
-#         sum=[0]*len(nums)
-#         sum[0]=nums[0]
-#         for i in range(1,len(nums)):
-#                 sum[i]=sum[i-1]+nums[i]
-
-# # Day 1- Find Pivot Index
-
-# def pivotIndex(self, nums):
-#         # nums=[-1,-1,0,1,1,-1]
-#         n=len(nums)
-#         leftsum=[0]*(n+1)
-        
-#         leftsum[0]=0
-#         for i in range(1,n+1):
-#             leftsum[i]=leftsum[i-1]+nums[i-1]
-        
-#         for i in range(n):
-#             if leftsum[i]==leftsum[n]-leftsum[i+1]:
-#                 return i
-#         if leftsum[n-1]==0:
-#             return n-1
-#         return -1
-
-# Day -2 Strings
-
-# Isomorphic Strings
-
-# def isIsomorphic(s,t):
-#         s_idx=[]
-#         t_idx=[]
-        
-#         for i in s:               
-#                 s_idx.append(s.index(i)) #adds index of first occurence of letter
-#         for i in t:
-#                 t_idx.append(t.index(i))
-#         if s_idx==t_idx:
-#                 return True
-#         return False
-              
-# print(isIsomorphic('paper','title')) 
-
-# # is Subsequence
-
-# def isSubsequence(s, t):
-
-#         s_ptr=0
-#         t_ptr=0
-        
-#         while s_ptr<len(s) and t_ptr<len(t):
-            
-#             if s[s_ptr]==t[t_ptr]:
-#                 s_ptr+=1
-#             t_ptr+=1
-        
-#         if s_ptr==len(s):
-#             return True
-#         return False
-
-# Day 3- Linked List
-
-# Merge 2 LL:
-# def mergeTwoLists(list1, list2):
-#         """
-#         :type list1: Optional[ListNode]
-#         :type list2: Optional[ListNode]
-#         :rtype: Optional[ListNode]
-#         """
-#         cur = dummy = ListNode()
-#         while list1 and list2:               
-#         if list1.val <= list2.val:
-#                 cur.next = list1
-#                 list1, cur = list1.next, list1
-#         else:
-#                 cur.next = list2
-#                 list2, cur = list2.next, list2
+#         even_sum=0
+#         answers=[]
+#         for i in nums:
+#             if i%2==0:
+#                 even_sum+=i
                 
-#         if list1 or list2:
-#         cur.next = list1 if list1 else list2
+#         for i in queries:
+#             if nums[i[1]]%2==0:
+#                 even_sum-=nums[i[1]]
+#             nums[i[1]]=nums[i[1]]+i[0]
+#             if nums[i[1]]%2==0:
+#                 even_sum+= nums[i[1]]
+#             answers.append(even_sum)
         
-#         return dummy.next
-
-
-#  Reverse Linked List
-
-# def reverseList(head):
-#     """
-#     :type head: ListNode
-#     :rtype: ListNode
-#     """
-    
-#     prev=next=None
-#     curr=head
-    
-#     while curr:
-        
-#         next=curr.next
-#         curr.next=prev
-#         prev=curr
-#         curr=next
-    
-#     head=prev
-#     return head
-
-# Day 4- Linked List
-
-# Middle of a Linked List
-
-# def middleNode(self, head):
-#         """
-#         :type head: ListNode
-#         :rtype: ListNode
-#         """
-#         fir=sec=head
-
-#         while sec!=None:
-#                 if sec.next!=None:
-#                         print(sec)
-#                         fir=fir.next
-#                         sec=sec.next.next
-#                 else:
-#                         break
-
-#         return fir
-
-# Linked List Cycle: return the index of beginning of cycle 
-
-# def detectCycle(self, head):
-#         """
-#         :type head: ListNode
-#         :rtype: ListNode
-#         """
-        
-#         if not head or not head.next:
-#             return None
-        
-#         slow=fast=head
-        
-#         while slow and slow.next and fast.next and fast.next.next:
-#             slow=slow.next
-#             fast=fast.next.next
+#         return answers
             
-#             if slow==fast:
-#                 break
-            
-#             if not slow or not fast:
-#                 return None
-#         if not slow or not slow.next or not fast.next or not fast.next.next:
-#             return None
-#         while slow!=head:
-#             head=head.next
-#             slow=slow.next
-#         return head
-
-# Similar to detecting cycle using floyds algo, just at the end, make head
-# and slow meet to get the beginning of cycle.
+        # Brute Force- Very bad idea
         
-# Day 5- Greedy Algorithm
+#         answers=[]
+        
+#         for i in queries:
+#             nums[i[1]]=nums[i[1]]+i[0]
+#             sum=0
+#             for j in nums:
+#                 if j%2==0:
+#                     sum+=j
+#             answers.append(sum)
+        
+#         return(answers)
 
-# def maxProfit(self, prices):
+# '''
+# Longest Palindrome
+# '''
+# from collections import Counter
+# s= 'civilwartestingwhetherthatnaptionoranynartionsoconceivedandsodedicatedcanlongendureWeareqmetonagreatbattlefiemldoftzhatwarWehavecometodedicpateaportionofthatfieldasafinalrestingplaceforthosewhoheregavetheirlivesthatthatnationmightliveItisaltogetherfangandproperthatweshoulddothisButinalargersensewecannotdedicatewecannotconsecratewecannothallowthisgroundThebravelmenlivinganddeadwhostruggledherehaveconsecrateditfaraboveourpoorponwertoaddordetractTgheworldadswfilllittlenotlenorlongrememberwhatwesayherebutitcanneverforgetwhattheydidhereItisforusthelivingrathertobededicatedheretotheulnfinishedworkwhichtheywhofoughtherehavethusfarsonoblyadvancedItisratherforustobeherededicatedtothegreattdafskremainingbeforeusthatfromthesehonoreddeadwetakeincreaseddevotiontothatcauseforwhichtheygavethelastpfullmeasureofdevotionthatweherehighlyresolvethatthesedeadshallnothavediedinvainthatthisnationunsderGodshallhaveanewbirthoffreedomandthatgovernmentofthepeoplebythepeopleforthepeopleshallnotperishfromtheearth'
+
+# def longestPalindrome(s):
 #         """
-#         :type prices: List[int]
+#         :type s: str
 #         :rtype: int
 #         """
-
-#         i=0
-#         j=1
-#         max_profit=0
-
-#         while j<len(prices):
-                
-#                 if prices[i]<=prices[j]:
-#                 max_profit=max(max_profit,prices[j]-prices[i])
+#         # s=s.upper()
+#         s_count=Counter(s)
+#         print(s_count)
+#         flag=True
+#         pal_len=0
+#         for i in s_count:
+#             if s_count[i]%2==0:
+#                 pal_len+=s_count[i]
+#             else:
+#                 if flag: 
+#                         flag=False
+#                         pal_len+=(s_count[i])
 #                 else:
-#                 i=j
-#                 j+=1
+#                         pal_len+=(s_count[i]-1)
+        
+#         return pal_len
 
-#         return max_profit
+# print(longestPalindrome(s))
 
