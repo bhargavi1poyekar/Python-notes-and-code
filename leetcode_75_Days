@@ -237,3 +237,67 @@ Longest Palindrome
 
 # print(longestPalindrome(s))
 
+'''
+Day-6 Binary Search
+'''
+
+# def search(self, nums, target):
+#         """
+#         :type nums: List[int]
+#         :type target: int
+#         :rtype: int
+#         """
+#         start=0
+#         end=len(nums)-1
+#         mid=(len(nums)-1)//2
+        
+#         if target==nums[0]:
+#             return 0
+#         elif target==nums[-1]:
+#             return len(nums)-1
+        
+#         while start!=end:
+            
+#             if nums[mid]==target:
+#                 return mid
+#             elif nums[mid]<target:
+#                 start=mid+1
+#             else:
+#                 end=mid
+#             mid=(start+end)//2
+        
+#         return -1
+
+'''
+Binary Seach- First Bad Version
+'''
+
+# def firstBadVersion(self, n):
+#         """
+#         :type n: int
+#         :rtype: int
+#         """
+#         if n==1:
+#             return 1
+        
+#         start=1
+#         end=n
+#         mid=(n)//2
+        
+#         while start!=end:
+            
+#             if isBadVersion(mid):
+#                 if mid==1:
+#                     return 1
+#                 elif isBadVersion(mid-1):
+#                     end=mid-1
+#                 else:
+#                     return mid
+                
+#             else:
+#                 start=mid+1
+        
+#             mid=(start+end)//2
+#         return mid
+        
+        

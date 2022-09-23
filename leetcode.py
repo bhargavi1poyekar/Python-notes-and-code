@@ -675,3 +675,92 @@ Sum of Even Numbers After Queries
 
 # print(longestPalindrome(s))
 
+'''
+Reverse Strings-3
+'''
+# def reverseWords(s):
+#         """
+#         :type s: str
+#         :rtype: str
+#         """
+#         s_list=s.split(' ')
+#         s_reverse=' '.join([i[::-1] for i in s_list])
+#         return s_reverse
+
+# print(reverseWords("Let's take LeetCode contest"))
+
+'''
+Concatenation of consecutive Binary Numbers
+'''
+
+# def concatenatedBinary(n):
+#         """
+#         :type n: int
+#         :rtype: int
+#         """
+#         bin_list=[]
+#         for i in range(1,n+1):
+                
+#                 bin_list.append(bin(i)[2:])
+        
+#         bin_con=''.join(bin_list)
+#         mod=10**9 +7
+#         print(int(bin_con,2)%mod)
+        
+# print(concatenatedBinary(3))
+
+'''
+First Hard Quest- Median of Two Sorted Arrays
+'''
+
+# def findMedianSortedArrays(self, nums1, nums2):
+#         """
+#         :type nums1: List[int]
+#         :type nums2: List[int]
+#         :rtype: float
+#         """
+        
+#         # nums1=[1,2]
+#         # nums2=[3,4]
+        
+#         tot_len=len(nums1)+len(nums2)
+#         even=0
+#         if tot_len%2==0:
+#             even=1
+        
+#         if even:
+#             mid1=(tot_len//2)-1
+#             mid=(tot_len//2)
+#         else:
+#             mid=(tot_len//2)
+            
+        
+#         count=0
+#         i=0
+#         j=0
+#         merge=[]
+        
+#         while i!=len(nums1) and j!=len(nums2) and count!=mid+1:
+#             if nums1[i]<=nums2[j]:
+#                 merge.append(nums1[i])
+#                 i+=1
+                
+#             else:
+#                 merge.append(nums2[j])
+#                 j+=1
+#             count+=1
+        
+        
+        
+#         if count!=mid+1:
+#             if i!=len(nums1):
+#                 merge.extend(nums1[i:])
+#             elif j!=len(nums2):
+#                 merge.extend(nums2[j:])
+       
+#         if even:
+           
+#             return (float(merge[mid1]+merge[mid])/2)
+#         else:
+#             return (merge[mid])
+
