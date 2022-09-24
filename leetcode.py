@@ -764,3 +764,173 @@ First Hard Quest- Median of Two Sorted Arrays
 #         else:
 #             return (merge[mid])
 
+'''
+Find Winner on a Tic Tac Toe Game
+'''
+
+# def tictactoe(self, moves):
+#         """
+#         :type moves: List[List[int]]
+#         :rtype: str
+#         """
+#         # moves=[[0,0],[2,2],[1,0],[2,0],[0,1],[1,2],[1,1],[0,2]]
+#         Win=[[[0,0],[1,1],[2,2]],
+#             [[0,0],[0,1],[0,2]],
+#              [[0,0],[1,0],[2,0]],
+#              [[0,1],[1,1],[2,1]],
+#              [[0,2],[1,1],[2,0]],
+#              [[0,2],[1,2],[2,2]],
+#              [[1,0],[1,1],[1,2]],
+#              [[2,0],[2,1],[2,2]]
+#             ]
+#         A_moves=[]
+#         B_moves=[]
+        
+#         for i in range(len(moves)):
+#             if i%2==0:
+#                 A_moves.append(moves[i])
+#             else:
+#                 B_moves.append(moves[i])
+        
+#         for i in Win:
+#             print(B_moves)
+#             print(i)
+#             if all(x in A_moves for x in i):
+#                 return 'A'
+#             elif all(x in B_moves for x in i):
+#                 return 'B'
+        
+#         if len(moves)==9:
+#             return 'Draw'
+#         return 'Pending'
+
+'''
+Find First and Last Position of Element in Sorted Array
+'''
+# Perform binary search 3 times, first for finding one of the index of target, 
+# then finding left position and then finding right
+
+# def searchRange(self, nums, target):
+#         """
+#         :type nums: List[int]
+#         :type target: int
+#         :rtype: List[int]
+#         """
+        
+#         start, end=0, len(nums)-1
+#         found=-1
+        
+#         while start<=end:
+            
+#             mid=(start+end)//2
+            
+#             if nums[mid]==target:
+#                 found=mid
+#                 break
+#             elif nums[mid]>target:
+#                 end=mid-1
+#             else:
+#                 start=mid+1
+        
+#         if found==-1:
+#             return [-1,-1]
+        
+#         # find left boundary
+#         start, end=0, found
+#         while start<=end:
+#             mid=(start+end)//2
+#             if nums[mid]==target:
+#                 end=mid-1
+#             else:
+#                 start=mid+1
+        
+#         left=start
+        
+#         # find right boundary
+        
+#         # find left boundary
+#         start, end=found, len(nums)-1
+#         while start<=end:
+#             mid=(start+end)//2
+#             if nums[mid]==target:
+#                 start=mid+1
+#             else:
+#                 end=mid-1
+        
+#         right=end
+        
+#         return [left,right]
+        
+'''
+Add 2 Numbers of linked list
+'''
+# def addTwoNumbers(self, l1, l2):
+#         """
+#         :type l1: ListNode
+#         :type l2: ListNode
+#         :rtype: ListNode
+#         """
+#         # Getiing num1
+#         count=0
+#         num1=0
+#         while l1!=None:
+#             num1+=(10**count)*l1.val
+#             l1=l1.next
+#             count+=1
+        
+#         # Getting num2
+#         count=0
+#         num2=0
+#         while l2!=None:
+#             num2+=(10**count)*l2.val
+#             l2=l2.next
+#             count+=1
+        
+#         ans=num1+num2
+        
+#         sum_nums=ListNode()
+#         start=sum_nums
+#         rem=ans%10
+#         sum_nums.val=rem
+#         ans=ans//10
+        
+#         while ans!=0:
+#             sum_nums.next=ListNode(None)
+#             sum_nums=sum_nums.next
+#             rem=ans%10
+#             ans=ans//10
+#             sum_nums.val=rem
+        
+#         return start
+
+'''
+Count number of pairs with abs diff k
+'''
+
+# def countKDifference(self, nums, k):
+#         """
+#         :type nums: List[int]
+#         :type k: int
+#         :rtype: int
+#         """
+        
+#         diff_count={}
+#         count=0
+        
+#         for i in nums:
+            
+#             if i in diff_count:
+#                 count+=diff_count[i]
+#             if i>k:
+#                 if abs(k-i) in diff_count:
+#                     diff_count[abs(k-i)]+=1
+#                 else:
+#                     diff_count[abs(k-i)]=1
+                    
+#             if (k+i) in diff_count:
+#                 diff_count[k+i]+=1
+#             else:
+#                 diff_count[k+i]=1
+            
+        
+#         return(count)
