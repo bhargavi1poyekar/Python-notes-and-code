@@ -934,3 +934,112 @@ Count number of pairs with abs diff k
             
         
 #         return(count)
+
+
+'''
+Fibonacci Numbers
+'''
+
+# def fib(self, n):
+#         """
+#         :type n: int
+#         :rtype: int
+#         """
+        # O(2^n)
+        # Recursive solution
+        # if n<=1:
+        #     return n
+        # return self.fib(n-1)+self.fib(n-2)
+        # -------------
+        
+        # O(n)
+        # Iterative Solution- Dynamic Programming solution
+        # if n==0:
+        #     return n
+        # if n==1 or n==2:
+        #     return 1
+        
+        # fib0,fib1,fib2=0,1,1
+        
+        # for i in range(2,n+1):
+        #     fib2=fib0+fib1
+        #     fib0=fib1
+        #     fib1=fib2
+        
+        # return fib2
+        
+
+'''
+Balanced Strings
+'''
+
+# def balancedStringSplit(self, s):
+#         """
+#         :type s: str
+#         :rtype: int
+#         """
+        
+#         r_count=0
+#         l_count=0
+        
+#         split_count=0
+        
+#         for i in s:
+#             if i=='R':
+#                 r_count+=1
+#             elif i=='L':
+#                 l_count+=1
+            
+#             if r_count==l_count:
+#                 split_count+=1
+#                 r_count=0
+#                 l_count=0
+        
+#         return split_count
+
+'''
+Minimum Amount of Time to Collect Garbage
+'''
+# def garbageCollection(self, garbage, travel):
+#         """
+#         :type garbage: List[str]
+#         :type travel: List[int]
+#         :rtype: int
+#         """
+        
+#         g_end_idx, p_end_idx, m_end_idx=0,0,0
+        
+#         for i in range(len(garbage)-1, -1,-1):
+#             if 'G' in garbage[i]:
+#                 g_end_idx=i
+#                 break
+            
+#         for i in range(len(garbage)-1, -1,-1):
+#             if 'P' in garbage[i]:
+#                 p_end_idx=i
+#                 break
+        
+#         for i in range(len(garbage)-1, -1,-1):
+#             if 'M' in garbage[i]:
+#                 m_end_idx=i
+#                 break
+#         g_time=0
+        
+#         for i in range(g_end_idx+1):
+#             g_time+=garbage[i].count('G')
+#             if i+1<=g_end_idx:
+#                 g_time+=travel[i]
+#         p_time=0
+#         for i in range(p_end_idx+1):
+#             p_time+=garbage[i].count('P')
+#             if i+1<=p_end_idx:
+#                 p_time+=travel[i]
+                
+#         m_time=0
+#         for i in range(m_end_idx+1):
+#             m_time+=garbage[i].count('M')
+#             if i+1<=m_end_idx:
+#                 m_time+=travel[i]
+            
+#         return g_time+p_time+m_time
+
