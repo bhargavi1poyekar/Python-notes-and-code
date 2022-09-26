@@ -1043,3 +1043,115 @@ Minimum Amount of Time to Collect Garbage
             
 #         return g_time+p_time+m_time
 
+'''
+Number of 1 bits
+'''
+# def hammingWeight(self, n):
+#         """
+#         :type n: int
+#         :rtype: int
+#         """
+#         n_bin=bin(n)[2:]
+#         return(n_bin.count('1')
+
+'''
+Longest nice substring- nice if the substring has both uppercase and lowercase of the letters present
+'''
+# def longestNiceSubstring(self, s):
+#         """
+#         :type s: str
+#         :rtype: str
+#         """
+    
+#         nice=''
+#         for i in range(len(s)+1):
+#             for j in range(len(s)+1):
+#                 substr=s[i:j]
+                
+#                 if self.isNice(substr):
+#                     print(substr)
+#                     nice=max(nice,substr, key=len)
+                
+#         return nice
+    
+#     def isNice(self,s):
+        
+#         char_count=Counter(s)
+        
+#         for i in char_count:
+#             if i.upper() not in s or i.lower() not in s:
+#                 return False
+#         return True
+
+# Divide and Conquer approach:
+
+# def longestNiceSubstring(s):
+#         """
+#         :type s: str
+#         :rtype: str
+#         """
+    
+#         idx=isNice(s)
+#         if idx==-1:
+#                 return s
+        
+#         opt1=longestNiceSubstring(s[0,idx])
+#         opt2=longestNiceSubstring(s[idx+1,len(s)])
+        
+#         return max(opt1,opt2,key=len)
+    
+# def isNice(s):
+
+#         char_pos={}
+        
+#         for i in range(len(s)):
+#                 char_pos[s[i]]=i
+
+#         for i in char_pos:
+#                 if i.upper() not in s or i.lower() not in s:
+#                         return char_pos[i]
+#         return -1
+
+
+# print(longestNiceSubstring('Bb'))
+
+'''
+Min moves to seat everyone
+'''
+
+# def minMovesToSeat(self, seats, students):
+#         """
+#         :type seats: List[int]
+#         :type students: List[int]
+#         :rtype: int
+#         """
+#         seats=sorted(seats)
+#         students=sorted(students)
+        
+#         moves=0
+#         for i in range(len(students)):
+#             moves+=abs(students[i]-seats[i])
+        
+#         return moves
+
+'''
+Largest Local values in a Matrix
+'''
+
+# def largestLocal(self, grid):
+#         """
+#         :type grid: List[List[int]]
+#         :rtype: List[List[int]]
+#         """
+        
+#         max_arr=[]
+        
+#         for i in range(1,len(grid)-1):
+#             temp=[]
+#             for j in range(1,len(grid)-1):
+#                 max_loc=max(grid[i-1][j-1],grid[i-1][j],grid[i-1][j+1],grid[i][j-1],grid[i][j],grid[i][j+1],grid[i+1][j-1],grid[i+1][j],grid[i+1][j+1])
+#                 temp.append(max_loc)
+#             max_arr.append(temp)
+
+
+        
