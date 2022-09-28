@@ -300,4 +300,33 @@ Binary Seach- First Bad Version
 #             mid=(start+end)//2
 #         return mid
         
+'''
+Hashmap- Bulls and Cows
+'''
+
+# def getHint(self, secret, guess):
+#         """
+#         :type secret: str
+#         :type guess: str
+#         :rtype: str
+#         """
+#         # secret='1123'
+#         # guess='0111'
+#         x=0
+#         s_counter=Counter(secret)
+#         g_counter=Counter(guess)
+#         for i in range(len(secret)):
+#             if secret[i]==guess[i]:
+#                 x+=1
+#                 s_counter[secret[i]]-=1
+#                 g_counter[secret[i]]-=1
         
+#         y=0
+        
+#         for i in s_counter:
+#             if i in g_counter and g_counter[i]>=0:
+#                 y+=min(g_counter[i],s_counter[i])
+                
+        
+#         return str(x)+'A'+str(y)+'B'
+

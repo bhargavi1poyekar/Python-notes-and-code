@@ -1228,3 +1228,35 @@ Remove Nth node from end of list
         
 #         return head
 
+'''
+Backspace String Compare
+'''
+# def backspaceCompare(self, s, t):
+#         """
+#         :type s: str
+#         :type t: str
+#         :rtype: bool
+#         """
+#         # s='y#fo##f'
+#         # t='y#f#o##f'
+        
+#         s_stack=[]
+#         t_stack=[]
+        
+#         for i in s:
+#             if i=='#' and len(s_stack)>0:
+#                 s_stack.pop()
+#             elif i!='#':
+#                 s_stack.append(i)
+        
+#         print(s_stack)
+#         for i in t:
+#             if i=='#' and len(t_stack)>0:
+#                 t_stack.pop()
+#             elif i!='#':
+#                 t_stack.append(i)
+#         print(t_stack)
+#         if s_stack==t_stack:
+#             return True
+#         return False
+
