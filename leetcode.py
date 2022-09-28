@@ -1198,3 +1198,33 @@ Push Dominoes:
 
 #         return  dominoes.replace('xxx', 'R.L')              # <-- 3)
 
+'''
+Remove Nth node from end of list
+'''
+# def removeNthFromEnd(self, head, n):
+#         """
+#         :type head: ListNode
+#         :type n: int
+#         :rtype: ListNode
+#         """
+        
+#         temp=temp2=temp3=head
+        
+#         count=1
+#         while temp.next!=None:
+#             temp=temp.next
+#             if count>=n:
+#                 temp2=temp2.next
+#             count+=1
+        
+#         if temp2==head:
+#             temp3=temp2.next
+#             return temp3
+        
+#         else:
+#             while temp3.next!=temp2:
+#                 temp3=temp3.next
+#             temp3.next=temp2.next
+        
+#         return head
+
