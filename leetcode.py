@@ -1260,3 +1260,19 @@ Backspace String Compare
 #             return True
 #         return False
 
+'''
+Find K closest elements
+'''
+# def findClosestElements(self, arr, k, x):
+#         """
+#         :type arr: List[int]
+#         :type k: int
+#         :type x: int
+#         :rtype: List[int]
+#         """
+        
+#         diff=[(abs(x-n),i) for i,n in enumerate(arr)]
+#         diff=sorted(diff)
+#         print(diff)
+#         result=[arr[i[1]] for i in diff[:k]]
+#         return sorted(result)

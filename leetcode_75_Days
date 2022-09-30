@@ -330,3 +330,61 @@ Hashmap- Bulls and Cows
         
 #         return str(x)+'A'+str(y)+'B'
 
+'''
+Stack- Backspace String Compare
+'''
+# def backspaceCompare(self, s, t):
+#         """
+#         :type s: str
+#         :type t: str
+#         :rtype: bool
+#         """
+#         # s='y#fo##f'
+#         # t='y#f#o##f'
+        
+#         s_stack=[]
+#         t_stack=[]
+        
+#         for i in s:
+#             if i=='#' and len(s_stack)>0:
+#                 s_stack.pop()
+#             elif i!='#':
+#                 s_stack.append(i)
+        
+#         print(s_stack)
+#         for i in t:
+#             if i=='#' and len(t_stack)>0:
+#                 t_stack.pop()
+#             elif i!='#':
+#                 t_stack.append(i)
+#         print(t_stack)
+#         if s_stack==t_stack:
+#             return True
+#         return False
+
+'''
+Decode String
+'''
+# def decodeString(s):
+    # i=0
+    # num=0
+    # stack=['']
+
+    # while i<len(s):
+        
+    #     if s[i].isdigit():
+    #         num=num*10+int(s[i])
+    #     elif s[i]=='[':
+    #         stack.append(num)
+    #         num=0
+    #         stack.append('')
+    #     elif s[i]==']':
+    #         str1=stack.pop()
+    #         count=stack.pop()
+    #         str2=stack.pop()
+    #         stack.append(str2+str1*count)
+    #     else:
+    #         stack[-1]+=s[i]
+    #     i+=1
+
+    # return(''.join(stack))

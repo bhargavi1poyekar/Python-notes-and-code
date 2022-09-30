@@ -11,7 +11,7 @@ to overall problems, depend on optimal solution to subproblems.
 
 Approach:
 - Top Down with Memoization: solve bigger prob by recursively finding solns to smaller subprobs.
-storing theresult of already solved subprobs: Memoization
+storing the result of already solved subprobs: Memoization
 '''
 
 '''
