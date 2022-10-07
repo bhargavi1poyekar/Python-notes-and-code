@@ -1276,3 +1276,5 @@ Find K closest elements
 #         print(diff)
 #         result=[arr[i[1]] for i in diff[:k]]
 #         return sorted(result)
+
+# today
