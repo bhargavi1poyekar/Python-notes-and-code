@@ -175,6 +175,26 @@ Middle Of a Linked List
 
 #         return fir
 
+'''Linked List Remove Duplicates'''
+
+# def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+#         if head is None:
+#             return
+        
+#         tempNode=head
+        
+#         vis=set([tempNode.val])
+        
+#         while tempNode.next:
+#             if tempNode.next.val in vis:
+#                 tempNode.next=tempNode.next.next
+#             else:
+#                 vis.add(tempNode.next.val)
+#                 tempNode=tempNode.next
+        
+#         return head
+
 
 
 

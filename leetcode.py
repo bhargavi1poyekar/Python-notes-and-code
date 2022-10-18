@@ -1277,4 +1277,91 @@ Find K closest elements
 #         result=[arr[i[1]] for i in diff[:k]]
 #         return sorted(result)
 
-# today
+'''Linked List Remove Duplicates'''
+
+# def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        
+#         if head is None:
+#             return
+        
+#         tempNode=head
+        
+#         vis=set([tempNode.val])
+        
+#         while tempNode.next:
+#             if tempNode.next.val in vis:
+#                 tempNode.next=tempNode.next.next
+#             else:
+#                 vis.add(tempNode.next.val)
+#                 tempNode=tempNode.next
+        
+#         return head
+
+'''
+Find Largest Perimeter of Triangle
+'''
+# def largestPerimeter(self, nums: List[int]) -> int:
+        
+#         sorted_nums=sorted(nums,reverse=True)
+        
+#         for i in range(len(sorted_nums)-2):
+#             if sorted_nums[i]<sorted_nums[i+1]+sorted_nums[i+2]:
+#                 return sorted_nums[i]+sorted_nums[i+1]+sorted_nums[i+2]
+        
+#         return 0
+
+'''
+ Group the People Given the Group Size They Belong To
+'''
+
+# def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:
+        
+#         buckets={}
+        
+#         for i in range(len(groupSizes)):
+            
+#             if groupSizes[i] not in buckets:
+#                 buckets[groupSizes[i]]=[[i]]
+#             else:
+                
+#                 if len(buckets[groupSizes[i]][-1])<groupSizes[i]:
+#                     buckets[groupSizes[i]][-1].append(i)
+#                 else:
+#                     buckets[groupSizes[i]].append([i])
+            
+#         ans=[]
+
+'''
+Count and Say 
+'''
+
+# def countAndSay(self, n: int) -> str:
+#         if n==1:
+#             return '1'
+#         else:
+#             say=self.countAndSay(n-1)
+#             count_say=[]
+#             count=1
+#             if len(say)==1:
+#                 count_say.append([1,say[0]])
+#             else:
+                
+#                 for i in range(0,len(say)-1):
+#                     if say[i]==say[i+1]:
+#                         if i==len(say)-2:
+#                             count+=1
+#                             count_say.append([count,say[i]])
+#                         else:
+#                             count+=1
+#                     else:
+#                         count_say.append([count,say[i]])
+#                         count=1
+#                 if say[-1]!=say[-2]:
+#                     count_say.append([1,say[-1]])
+            
+#             say_string=''
+#             for i in count_say:
+#                 say_string+=str(i[0])+str(i[1])
+            
+#             return say_string
+        
