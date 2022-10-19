@@ -1364,4 +1364,30 @@ Count and Say
 #                 say_string+=str(i[0])+str(i[1])
             
 #             return say_string
+
+'''
+Top K Frequent words
+'''
+# def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        
+#         Count_hash={}
+        
+#         for i in words:
+#             if i not in Count_hash:
+#                 Count_hash[i]=1
+#             else:
+#                 Count_hash[i]+=1
+        
+#         print(Count_hash)
+        
+#         count_list=[]
+#         for i in Count_hash:
+#             count_list.append([i,Count_hash[i]])
+        
+#         print(count_list)
+        
+#         count_list_sorted=sorted(count_list, key=lambda l:(-l[1],l[0]))
+        
+#         return [x[0] for x in count_list_sorted[:k]]
+        
         
