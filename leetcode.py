@@ -1415,5 +1415,20 @@ Guess Number Higher or Lower
 #             else:
 #                 return mid
 #             mid=(low+high)//2
+
+# vowels=['a','e','i','o','u']
+# strArr=['aba','bcb','ece','aa','e']
+# queries=['1-3','2-5','2-2']
+
+# count=[0]*len(queries)
+# for i in range(len(queries)):
+#         query=queries[i]
+#         l=int(queries[i][0])-1
+#         r=int(queries[i][2])-1
+#         print(f'l={l},r={r}')
+#         for j in range(l,r+1):
+#                 if strArr[j][0] in vowels and strArr[j][-1] in vowels:
+#                         count[i]+=1
+# print(count)
         
         
