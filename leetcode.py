@@ -1416,9 +1416,14 @@ Guess Number Higher or Lower
 #                 return mid
 #             mid=(low+high)//2
 
+'''
+Paypal OA 2
+'''
 # vowels=['a','e','i','o','u']
 # strArr=['aba','bcb','ece','aa','e']
+# strArr=['aab','a','bcd','awe','bbbbbu']
 # queries=['1-3','2-5','2-2']
+# queries=['2-3','4-5']
 
 # count=[0]*len(queries)
 # for i in range(len(queries)):
@@ -1430,5 +1435,59 @@ Guess Number Higher or Lower
 #                 if strArr[j][0] in vowels and strArr[j][-1] in vowels:
 #                         count[i]+=1
 # print(count)
+       
+'''
+Paypal OA1
+'''
+# songs=[40,20,60]
+# count=0
+# for i in range(len(songs)):
+#         for j in range(i+1,len(songs)):
+                
+#                 if (songs[i]+songs[j])%60==0:
+#                         count+=1
+# print(count)
+
+# count=0
+# pair_dict={}
+# for i in range(len(time)):
+#         # print(time[i])
+#         if -time[i]%60 in pair_dict:
+#         count+=pair_dict[-time[i]%60]
+#         if time[i]%60 in pair_dict:
+#         pair_dict[time[i]%60]+=1
+#         else:
+#         pair_dict[time[i]%60]=1
+#         # print(pair_dict)
+#         # print(count)
         
+# # print(pair_dict)
+# return(count)
+
+'''
+Tu simple - Rachit
+Q1
+'''
+
+import sys
+A=12
+B=21
+N=5
+
+end=2**N
+max_val=0
+X_val=0
+
+# while(start<end):
+#         # X=(start+end)//2
         
+#         print(X,)
+#         start+=1
+#         X+=1
+mod=(10**9)+7
+for i in range(end):
+        if max_val<=(A^i)*(B^i):
+                max_val=(A^i)*(B^i)
+                X_val=i
+
+print(max_val%mod)
