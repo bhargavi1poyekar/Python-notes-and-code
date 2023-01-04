@@ -14,13 +14,13 @@ func main() {
 	// fmt.Println(age==45)
 	// fmt.Println(age!=50)
 
-	// if age<30{
-	// 	fmt.Println("Hello")
-	// }else if age <40{
-	// 	fmt.Println("Hii")
-	// }else{
-	// 	fmt.Println("Yoo")
-	// }
+	if age<30{
+		fmt.Println("Hello")
+	}else if age <40{
+		fmt.Println("Hii")
+	}else{
+		fmt.Println("Yoo")
+	}
 
 
 	// if else inside loop
