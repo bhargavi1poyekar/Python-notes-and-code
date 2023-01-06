@@ -1469,25 +1469,55 @@ Tu simple - Rachit
 Q1
 '''
 
-import sys
-A=12
-B=21
-N=5
+# import sys
+# A=12
+# B=21
+# N=5
 
-end=2**N
-max_val=0
-X_val=0
+# end=2**N
+# max_val=0
+# X_val=0
 
-# while(start<end):
-#         # X=(start+end)//2
+# # while(start<end):
+# #         # X=(start+end)//2
         
-#         print(X,)
-#         start+=1
-#         X+=1
-mod=(10**9)+7
-for i in range(end):
-        if max_val<=(A^i)*(B^i):
-                max_val=(A^i)*(B^i)
-                X_val=i
+# #         print(X,)
+# #         start+=1
+# #         X+=1
+# mod=(10**9)+7
+# for i in range(end):
+#         if max_val<=(A^i)*(B^i):
+#                 max_val=(A^i)*(B^i)
+#                 X_val=i
 
-print(max_val%mod)
+# print(max_val%mod)
+
+'''
+Minimum number of arrows to burst balloons
+'''
+
+# def findMinArrowShots(self, points: List[List[int]]) -> int:
+        
+#         points.sort(key=lambda x:x[1])
+        
+#         count=1
+#         end_ptr=points[0][1]
+#         for s,e in points:
+#             if s>end_ptr:
+#                 end_ptr=e
+#                 count+=1
+#         return count
+
+'''Minimum moves to equal array elements
+'''
+
+# def minMoves(self, nums: List[int]) -> int:
+
+#         minim=min(nums)
+
+#         moves=0
+
+#         for i in nums:
+#                 moves+=i-minim
+#         return moves
+

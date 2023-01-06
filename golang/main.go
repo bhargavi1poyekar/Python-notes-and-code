@@ -87,6 +87,9 @@ func main() {
 	var str = fmt.Sprintf("\nAge One is: %v , and name One is: %v \n", ageOne,nameOne)
 	fmt.Println(str)
 
+	sayGreet("Bhargavi")
+	// can use functions, variables (defined outside main function) from other file here, as they both belong to same package, but while running, we need to run both the files
+
 }
 
 
