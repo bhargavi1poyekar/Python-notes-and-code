@@ -116,16 +116,16 @@ def preorder(rootNode): # VLR
 
 # postorder(newBT)
 
-def SearchBT(root,val):
+# def SearchBT(root,val):
     
-    if not root:
-        return
-    if root.data==val:
-        print("Item Found")
-        return
-    SearchBT(root.leftChild,val)
-    SearchBT(root.rightChild,val)
+#     if not root:
+#         return
+#     if root.data==val:
+#         print("Item Found")
+#         return
+#     SearchBT(root.leftChild,val)
+#     SearchBT(root.rightChild,val)
 
-# preorder(newBT)
-if(SearchBT(newBT,'Drink')==None):
-    print('Not Found')
+# # preorder(newBT)
+# if(SearchBT(newBT,'Drink')==None):
+#     print('Not Found')
