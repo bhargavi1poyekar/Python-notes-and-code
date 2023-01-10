@@ -1539,3 +1539,32 @@ Generate Parenthesis
 #         res = []
 #         dfs(0, 0, '')
 #         print(res)
+
+'''
+Same Tree
+'''
+# def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        
+#         if not p and not q:
+#             return True
+#         if p and q and p.val==q.val:
+#             return self.isSameTree(p.left,q.left) and self.isSameTree(p.right,q.right)
+#         else:
+#             return False
+
+'''
+Symmetric Tree
+'''
+# def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        # if not root:
+        #         return True
+        # def traverse(l,r):
+        #         if not l and not r:
+        #         return True
+        #         if not l or not r:
+        #         return False
+        #         if l.val ==r.val:
+        #         return traverse(l.left,r.right) and traverse(l.right,r.left)
+        #         return False
+
+        # return traverse(root.left, root.right)
