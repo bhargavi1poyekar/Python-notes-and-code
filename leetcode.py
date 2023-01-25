@@ -1568,3 +1568,22 @@ Symmetric Tree
         #         return False
 
         # return traverse(root.left, root.right)
+
+'''
+Finding the Users Active Minutes
+'''
+
+#  def findingUsersActiveMinutes(self, logs: List[List[int]], k: int) -> List[int]:
+#         hash={}
+
+#         for Id, time in logs:
+#             if Id in hash:
+#                 hash[Id].append(time)
+#             else:
+#                 hash[Id]=[time]
+        
+#         ans=[0]*k
+#         for Id in hash:
+#             ans[len(set(hash[Id]))-1]+=1
+#         return ans
+
