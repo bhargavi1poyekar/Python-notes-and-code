@@ -129,6 +129,16 @@ Ransom Note
 #             return False
 #     return True
 
+'''Hackerranke Ransomnote'''
+# m_words=Counter(magazine)
+# n_words=Counter(note)
+
+# for i in n_words:
+# if i not in m_words or n_words[i]>m_words[i]:
+#         return "No"
+# return "Yes"
+
+
 
 # print(ransom_note('aabaa','baaa'))
 
