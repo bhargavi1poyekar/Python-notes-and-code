@@ -449,3 +449,23 @@ Happy Number
 #         # print(spiral)
             
 #     return(spiral)
+
+'''
+Number of 0 filled subarrays:
+'''
+
+# ans=0 # final ans
+# count=0 # to keep count of continuous 0
+# for i in nums:
+#     if i==0: 
+#         count+=1
+#     else: # continuity broken
+#         ans+=count*(count+1)//2 => number of subarrays of array of 0
+#         count=0 
+
+# if count>0: # Array ending with 0's
+#     ans+=count*(count+1)//2
+# return ans
+
+
+

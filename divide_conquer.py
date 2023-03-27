@@ -25,6 +25,19 @@ Number Factor- No. of ways N can be expressed as sum of 1,3,4
 
 # print(numFact(5))
 
+# def numFact(n, memo):
+#     if n<=2:
+#         return 1
+#     elif n==3:
+#         return 2
+#     elif n not in memo:
+#         memo[n]=numFact(n-1, memo)+numFact(n-3, memo)+numFact(n-4, memo)
+#     return memo[n]
+
+# print(numFact(5, {}))
+
+
+
 '''
 House Robber
 

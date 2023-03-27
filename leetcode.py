@@ -1597,3 +1597,23 @@ Finding the Users Active Minutes
 #             ans[len(set(hash[Id]))-1]+=1
 #         return ans
 
+'''
+Leet-152: Maximum product subarray
+'''
+
+# def maxProd(arr):
+#     res=max(arr)
+#     curMin, curMax=1,1
+#     for n in arr:
+#         if n==0:
+#             curMax,curMin=1,1
+#             continue
+#         tmp=curMax*n
+#         curMax=max(n*curMax,n*curMin,n)
+#         curMin=min(tmp,n*curMin,n)
+#         res=max(res,curMax)
+#      return res
+
+'''
+Leet-300 Longest Increasing Subsequence:
+'''

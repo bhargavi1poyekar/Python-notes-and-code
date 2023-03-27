@@ -44,6 +44,27 @@ Fibonacci with tabulation- O(n)
 #     return tab[n-1]
     
 # print(fib(6))
+
+'''
+Catalan Numbers
+'''
+
+# def catalan(n, memo):
+#     if n<=1:
+#         return 1
+    
+#     if n not in memo:
+#         cat=0
+#         for i in range(n):
+#             if n in memo:
+#                 memo[n]+=catalan(i, memo)*catalan(n-i-1, memo)
+#             else:
+#                 memo[n]=catalan(i, memo)*catalan(n-i-1, memo)
+#     return memo[n] 
+# memo={}
+# print(catalan(5, memo))
+
+
         
 '''
 Number Factor- top down
@@ -121,5 +142,120 @@ Convert 1 string to another
 #         return temp[dictkey]
     
 # print(find_min_op('table','tbrles',0,0,{}))
+
+'''
+Leet-152: Maximum product subarray
+'''
+
+# def maxProd(arr):
+#     res=max(arr)
+#     curMin, curMax=1,1
+#     for n in arr:
+#         if n==0:
+#             curMax,curMin=1,1
+#             continue
+#         tmp=curMax*n
+#         curMax=max(n*curMax,n*curMin,n)
+#         curMin=min(tmp,n*curMin,n)
+#         res=max(res,curMax)
+#      return res
+
+'''
+Leet-300 Longest Increasing Subsequence:
+'''
+
+# def LongIS(nums):
+#     LIS=[1]*len(nums)
+
+#     for i in range(len(nums)-1,-1,-1):
+#         for j in range(i+1, len(nums)):
+#             if nums[i]<nums[j]:
+#                 LIS[i]=max(LIS[i],1+LIS[j])
+    
+#     return max(LIS)
+
+# O(n^2)
+
+'''
+Leet 1143- Longest Common subsequence:
+'''
+# def longcomsub(text1, text2):
+#     dp=[[0 for j in range(len(text2+1))] for i in range(len(text1)+1)]
+
+#     for i in range(len(text1)-1,-1,-1):
+#         for j in range(len(text2)-1,-1,-1):
+#             if text1[i]==text2[j]:
+#                 dp[i][j]=1+dp[i+1][j+1]
+#             else:
+#                 dp[i][j]=max(dp[i+1][j],dp[i][j+1])
+
+#     return dp[0][0]
+
+'''
+Leet 474- Zeroes and Ones 
+'''
+
+# def findmax(strs, m,n):
+#     dp={}
+
+#     def dfs(i,m,n):
+#         if i==len(strs):
+#             return 0
+#         if (i,m,n) in dp:
+#             return dp[(i,m,n)]
+
+#         mCnt, nCnt=strs[i].count('0'),strs[i].count('1')
+#         dp[(i,m,n)]=dfs(i+1,m,n)
+#         if mCnt<=m and nCnt<=n:
+#             dp[(i,m,n)]=max(dp[(i,m,n)],1+dfs(i+1,m-mCnt,n-nCnt))
+#         return dp[(i,m,n)]
+
+#     return dfs(0,m,n)
+
+'''
+Leet-72: Edit Distance
+'''
+# def minDist(word1,word2):
+#     cache=[[float("inf")]*(len(word2)+1) for i in range(len(word1)+1)]
+
+#     for j in range(len(word2)+1):
+#         cache[len(word1)][j]=len(word2)-j
+#     for i in range(len(word1)+1):
+#         cache[j][len(word2)]=len(word2)-i
+
+#     for i in range(len(word1)-1,-1,-1):
+#         for j in range(len(word2)-1,-1,-1):
+#             if word1[i]==word2[j]:
+#                 cache[i][j]=cache[i+1][j+1]
+#             else:
+#                 cache[i][j]=1+min(cache[i+1][j],cache[i][j+1],cache[i+1][j+1])
+    
+#     return cache[0][0]
+
+'''
+Leet 64: Min Path Sum
+'''
+# def minPathSum(self, grid: List[List[int]]) -> int:
+#     m=len(grid)
+#     n=len(grid[0])
+#     cache=[[float("inf")]*(n+1) for i in range(m+1)]
+#     cache[m-1][n]=0
+
+#     for i in range(m-1,-1,-1):
+#         for j in range(n-1,-1,-1):
+#             cache[i][j]=grid[i][j]+min(cache[i+1][j],cache[i][j+1]) 
+#     return cache[0][0]
+
+'''
+Leet-322: Coin change
+'''
+def coinChange(coins,amount):
+    dp=[amount+1]*(amount+1)
+    dp[0]=0
+    for a in range(1,amount+1):
+        for c in coins:
+            if a-c>=0:
+                dp[a]=min(dp[a],1+dp[a-c])
+    return dp[amount] if dp[amount]!=amount+1 else -1
 
 
