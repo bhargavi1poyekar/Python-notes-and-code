@@ -249,13 +249,38 @@ Leet 64: Min Path Sum
 '''
 Leet-322: Coin change
 '''
-def coinChange(coins,amount):
-    dp=[amount+1]*(amount+1)
-    dp[0]=0
-    for a in range(1,amount+1):
-        for c in coins:
-            if a-c>=0:
-                dp[a]=min(dp[a],1+dp[a-c])
-    return dp[amount] if dp[amount]!=amount+1 else -1
+# def coinChange(coins,amount):
+#     dp=[amount+1]*(amount+1)
+#     dp[0]=0
+#     for a in range(1,amount+1):
+#         for c in coins:
+#             if a-c>=0:
+#                 dp[a]=min(dp[a],1+dp[a-c])
+#     return dp[amount] if dp[amount]!=amount+1 else -1
+
+'''
+Partition Equal Subset Sum:
+'''
+
+# if sum(nums)%2!=0:
+#     return False
+        
+# target=sum(nums)/2
+# n=len(nums)
+# cache=set([0,nums[n-1]])
+# for i in range(n-2,-1,-1):
+#     temp=set()
+#     for j in cache:
+#         temp.add(nums[i]+j)
+#         temp.add(j)
+
+#     cache=temp
+
+# if target in cache:
+#     return True
+# else:
+#     return False
+
+
 
 
