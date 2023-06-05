@@ -1613,7 +1613,3 @@ Leet-152: Maximum product subarray
 #         curMin=min(tmp,n*curMin,n)
 #         res=max(res,curMax)
 #      return res
-
-'''
-Leet-300 Longest Increasing Subsequence:
-'''
