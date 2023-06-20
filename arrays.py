@@ -18,22 +18,19 @@ Max Consecutive Ones
 '''
 Find Numbers with even number of digits
 '''
-# def findNumbers(nums): 
-#         digi_count=[0 for i in range(len(nums))]
-#         print(digi_count)
-#         for i in range(len(nums)):
-                
-#                 while(nums[i]!=0):
-#                         nums[i]=nums[i]//10
-#                         print(nums[i])
-#                         digi_count[i]+=1
-#                         print(digi_count)
-                
+# def findNumbers(self, nums: List[int]) -> int:
         
+#         digi_count=[0 for i in range(len(nums))]
 #         even_count=0
-#         for count in digi_count:
-#                 if count%2==0:
-#                         even_count+=1
+#         for i in range(len(nums)):
+#             while(nums[i]!=0):
+#                 nums[i]=nums[i]//10
+#                 digi_count[i]+=1
+#             if digi_count[i]%2==0:
+#                 even_count+=1
+        
+        
+        
 #         return even_count
 
 # print(findNumbers([555,901,482,1771]))

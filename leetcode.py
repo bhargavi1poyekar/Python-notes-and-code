@@ -1633,3 +1633,65 @@ Count Negative Numbers in a Sorted Matrix
         
 #         return count
 
+'''
+Find Smallest Letter greater than target
+'''
+
+# def nextGreatestLetter(self, letters: List[str], target: str) -> str:
+
+#         # for i in letters:
+#         #     if ord(i)>ord(target):
+#         #         return i
+#         # return letters[0]
+
+#         left=0
+#         right=len(letters)-1
+#         while(left<=right):
+#             mid=(right-left//2)
+#             if ord(letters[mid])>ord(target):
+#                 right=mid-1
+#             else:
+#                 left=mid+1
+        
+#         if left==len(letters):
+#             return letters[0]
+#         return letters[left]
+
+'''
+Find the Highest ALtitude
+'''
+
+#  def largestAltitude(self, gain: List[int]) -> int:
+        
+#         n=len(gain)
+        
+#         curr_alt=0
+#         max_alt=0
+#         for i in range(n):
+#             curr_alt=gain[i]+curr_alt
+#             max_alt=max(max_alt,curr_alt)
+#         return max_alt
+
+'''
+K Radius SubArray Averages
+'''
+
+#  def getAverages(self, nums: List[int], k: int) -> List[int]:
+
+#         num_count=(k*2)+1
+#         ans=[0 for i in range(len(nums))]
+
+#         prefix_sum=[0]
+#         for i in range(len(nums)):
+#             prefix_sum.append(prefix_sum[i]+nums[i])
+
+#         # print(prefix_sum)
+
+#         for i in range(len(nums)):
+#             if i-k<0 or i+k>len(nums)-1:
+#                 ans[i]=-1
+#             else:
+#                 ans[i]=(prefix_sum[i+k+1]-prefix_sum[i-k])//num_count
+        
+#         return(ans)
+
