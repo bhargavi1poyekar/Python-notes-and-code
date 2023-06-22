@@ -641,3 +641,92 @@
         
 #         return max_area
 
+'''
+28. 3 Sum
+'''
+
+# def threeSum(self, nums: List[int]) -> List[List[int]]:
+
+#         nums=sorted(nums)
+#         ans=[]
+#         for i in range(len(nums)):
+#             if nums[i]>0:
+#                 break
+#             elif i!=0 and nums[i]!=nums[i-1]:
+#                 ans.extend(self.twoSum(nums[i+1:],-nums[i]))
+#             elif i==0:
+#                 ans.extend(self.twoSum(nums[i+1:],-nums[i]))
+        
+#         return ans
+
+
+#     def twoSum(self,nums, target):
+
+#         left=0
+#         right=len(nums)-1
+#         res=[]
+
+#         # print(nums,target)
+#         while(left<right):
+#             if nums[left]+nums[right]==target:
+#                 res.append([-target,nums[left],nums[right]])
+#                 left+=1
+#                 right-=1
+#                 while(left<right and nums[left]==nums[left-1]):
+#                     left+=1
+    
+#             elif target-nums[left]<nums[right]:
+#                 right-=1
+#             else:
+#                 left+=1
+            
+#         return res
+
+
+'''
+29. Min Size SubArray Sum
+'''
+ 
+#  def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+
+#         if target in nums:
+#             return 1
+#         if sum(nums)<target:
+#             return 0
+        
+#         n=len(nums)
+#         min_size=n
+#         left=right=0
+#         subsum=nums[0]
+
+#         while(right<n-1):
+            
+#             if subsum<target:
+#                 right+=1
+#                 subsum+=nums[right]
+
+#             while(subsum>=target):
+#                 min_size=min(min_size,right-left+1)
+#                 subsum-=nums[left]
+#                 left+=1
+        
+#         return min_size
+
+'''
+30. Longest Substring Without Repeating Characters:
+'''
+
+#  def lengthOfLongestSubstring(self, s: str) -> int:
+
+#         hash_index={}
+#         left=0
+#         longest=0
+#         for right in range(len(s)):
+#             if s[right] in hash_index:
+#                 left=max(hash_index[s[right]],left)
+            
+#             longest=max(longest,right-left+1)
+#             hash_index[s[right]]=right+1
+#         return longest
+
+
