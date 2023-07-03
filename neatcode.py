@@ -106,3 +106,131 @@ Permutation in a string
 #             start+=1
 
 #         return match_count==26 
+
+
+'''
+49. Group Anagrams- 
+'''
+
+# def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+
+#         grp=[]
+#         hash_map={}
+#         count=0
+        
+#         for word in strs:
+#             word_sorted=''.join(sorted(word))
+            
+#             if word_sorted in hash_map:
+#                 grp[hash_map[word_sorted]].append(word)
+#             else:
+#                 grp.append([word])
+#                 hash_map[word_sorted]=count
+#                 count+=1
+            
+        
+#         return grp
+
+#------------------------------------------------------------------------------------------------
+
+# Linked List:
+
+'''
+1. Reorder List
+'''
+
+#  def reorderList(self, head: Optional[ListNode]) -> None:
+#         """
+#         Do not return anything, modify head in-place instead.
+#         """
+
+#         if not head.next: return head
+
+#         slow=head
+#         fast=head
+
+#         while(fast and fast.next):
+#             prev=slow
+#             slow=slow.next
+#             fast=fast.next.next
+
+#         curr=slow
+#         prev.next=None
+#         prev=None
+       
+#         while(curr):
+#             nn=curr.next
+#             curr.next=prev
+#             prev=curr
+#             curr=nn
+       
+#         h=dummy=ListNode()
+
+#         while(head and prev):
+#             dummy.next=head
+#             dummy,head=dummy.next,head.next
+#             dummy.next=prev
+#             dummy,prev=dummy.next,prev.next
+        
+#         return(h.next)
+
+'''
+347. Top K frequent Elements
+'''
+#  def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+
+#         nums_count=collections.Counter(nums)
+#         max_freq=max(nums_count.values())
+
+#         buckets=[[] for i in range(max_freq)]
+
+#         for i in nums_count:
+#             buckets[nums_count[i]-1].append(i)
+
+#         ans=[]
+#         for i in range(len(buckets)-1,-1,-1):
+#             if k==0:
+#                 break
+#             for num in buckets[i]:
+#                 ans.append(num)
+#                 k-=1
+
+#         return(ans)
+
+'''
+36. Valid Sudoku
+'''
+
+# def isValidSudoku(self, board: List[List[str]]) -> bool:
+
+#         n=9
+#         rows=[set() for i in range(n)]
+#         cols=[set() for i in range(n)]
+#         boxes=[set() for i in range(n)]
+
+#         for r in range(9):
+#             for c in range(9):
+#                 val=board[r][c]
+
+#                 if val=='.':
+#                     continue
+                
+#                 if val in rows[r]:
+#                     return False
+                
+#                 rows[r].add(val)
+
+#                 if val in cols[c]:
+#                     return False
+                
+#                 cols[c].add(val)
+
+#                 box_idx=(r//3)*3+(c//3)
+
+                
+#                 if val in boxes[box_idx]:
+#                     return False
+                
+#                 boxes[box_idx].add(val)
+        
+#         return True

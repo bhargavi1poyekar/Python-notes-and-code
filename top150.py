@@ -1,5 +1,5 @@
 '''
-1. Merge Sorted Arrays:
+1. Merge Sorted Arrays (88):
 '''
 # def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
 #         """
@@ -17,10 +17,14 @@
 #         if n>0:
 #             nums1[0:n]=nums2[0:n]
 
+'''
+1. 2 ptr approach. Start both ptrs from m, n resp. and go back. Compare the values. 
+Add the greater value from the end. Continue till one of them reaches start of array. 
+'''
 
 '''
-2. Remove element
-'''
+2. Remove element (27)
+''' 
 
 # def removeElement(nums, val):
     
@@ -35,7 +39,11 @@
 # print(removeElement([3,2,2,3,4,4,3,2,3,5,2],2))
 
 '''
-3. Remove Duplicates form Sorted Array
+Keep a count of valid numbers. Add new element to count index only if it is not the number to be removed.
+'''
+
+'''
+3. Remove Duplicates form Sorted Array (26)
 '''
 # def removeDuplicates(self, nums: List[int]) -> int:
 
@@ -52,7 +60,12 @@
 #         return ptr1+1
 
 '''
-4. Remove Duplicates from Sorted Array 2
+fast and slow ptr: increment fast, till element not equal to slow ptrs element.
+then increment slow ptr, and put new element at slow ptr.
+'''
+
+'''
+4. Remove Duplicates from Sorted Array 2 (80)
 '''
 
 # def removeDuplicates(self, nums: List[int]) -> int:
@@ -75,9 +88,12 @@
         
 #         return ptr1+1
 
+'''
+Keep count of same numbers, till the count is less than 2, can copy. else skip
+'''
 
 '''
-5. Majority Element
+5. Majority Element ()
 '''
 # def majorityElement(self, nums: List[int]) -> int:
 
@@ -95,7 +111,7 @@
 #                 return item 
 
 '''
-6. Rotate Array
+6. Rotate Array (189)
 '''
 
 # def rotate(self, nums: List[int], k: int) -> None:
@@ -116,10 +132,13 @@
 #         start+=1
 #         end-=1
 #     return nums
-        
 
 '''
-7. Best Time to Buy and Sell Stock
+Reverse 3 times: once entire, then 0 to k-1 then k to end
+'''
+
+'''
+7. Best Time to Buy and Sell Stock (121)
 '''
 
 # def maxProfit(self, prices: List[int]) -> int:
@@ -136,7 +155,13 @@
 #         return max_profit
 
 '''
-8. Best Time to Buy and Sell Stock 2
+Keep cheapest price, and max profit. If current price is less than cheapest, then it is new cheapest
+Calculate new profit and compare with max.
+'''
+
+
+'''
+8. Best Time to Buy and Sell Stock 2- 122
 '''
 
 # the most important thing here is to know that the all valleys and peaks need to be considered, hence immediate up and down prices are considered.
@@ -152,18 +177,27 @@
 #         return profit_max
 
 '''
-9. Jump Game
+Greedy approach: if next price greater than current, then add it in profit. 
+'''
+
+'''
+9. Jump Game (55)
 '''
 
 # def canJump(self, nums: List[int]) -> bool:
         
-#         n=len(nums)-1
+#         goal=len(nums)-1
 
-#         for i in range(n-1,-1,-1):
-#             if i+nums[i]>=n:
-#                 n=i
+#         for curr in range(n-1,-1,-1):
+#             if curr+nums[i]>=goal:
+#                 goal=curr
            
 #         return True if n==0 else False
+
+'''
+STart from back, and check if you can reach the end from that position, 
+if possible, then our new goal is current.
+'''
 
 '''
 10. Jump Game 2
@@ -183,6 +217,10 @@
 #             r=farthest
 #             jmp+=1
 #         return jmp
+
+'''
+Greedy approach: Keep a window of min jump it can make, to max jump it can make.
+'''
 
 '''
 11. Roman to Integer
@@ -210,6 +248,14 @@
 #         return val
 
 '''
+Check if curr characters numeric value is less than next chars numeric value
+if yes then subtract numeric value from sum
+if no, then add numeric value in sum
+
+don't forget to add last elements value. 
+'''
+
+'''
 12. Length of last word
 '''
 
@@ -221,7 +267,7 @@
 #         for i in range(len(s)-1,-1,-1):
 #             if s[i]==' ' and word!=0:
 #                 str_idx=i+1
-#                 break
+#                 break 
 #             elif s[i]!=' ' and end_idx==0:
 #                 word=1
 #                 end_idx=i
@@ -682,6 +728,9 @@
             
 #         return res
 
+###########################################################################
+
+# Sliding Window
 
 '''
 29. Min Size SubArray Sum
@@ -729,4 +778,510 @@
 #             hash_index[s[right]]=right+1
 #         return longest
 
+'''
+76. Minimum Window Substring: 
+'''
 
+# def minWindow(self, s: str, t: str) -> str:
+
+#         if len(t)>len(s):return ""
+        
+
+#         t_count=collections.Counter(t)
+#         unique_char=len(t_count)
+      
+#         win_count=collections.Counter()
+
+#         left=0  
+#         sub_char=0
+#         min_length=float('inf')
+#         min_left=0
+#         min_right=0
+        
+#         for right in range(len(s)):
+#             win_count[s[right]]+=1
+
+#             if win_count[s[right]]==t_count[s[right]]:
+#                 sub_char+=1
+            
+#             while(sub_char==unique_char):
+#                 if right-left+1<min_length:
+#                     min_length=right-left+1
+#                     min_left=left
+#                     min_right=right
+                
+#                 if win_count[s[left]]==t_count[s[left]]:
+#                     sub_char-=1
+#                 win_count[s[left]]-=1
+#                 left+=1
+        
+#         return '' if min_length==float('inf') else s[min_left:min_right+1]
+
+##############################################################################
+
+# Linked List
+
+'''
+141. Linked List Cycle
+'''
+# def hasCycle(self, head: Optional[ListNode]) -> bool:
+        
+#         fast=head
+#         slow=head
+
+#         while(fast and fast.next):
+#             slow=slow.next
+#             fast=fast.next.next
+            
+#             if (slow==fast):
+#                 return True
+            
+        
+#         return False
+
+'''
+92. Reverse Linked List 2
+'''
+
+# if not head:
+#             return head
+        
+#         if left==right:
+#             return head
+        
+#         prev=None
+#         curr=head
+
+#         # Bringing prev and curr to their positions: curr=>left and prev=left-1
+#         while(left>1):
+#             prev=curr
+#             curr=curr.next
+#             left,right=left-1,right-1 # dec left,n
+        
+#         con,tail=prev,curr
+
+#         while(right):
+#             next_n=curr.next
+#             curr.next=prev
+#             prev=curr
+#             curr=next_n
+#             right-=1
+
+#         if con:
+#             con.next=prev
+#         else:
+#             head=prev
+        
+#         tail.next=curr
+#         return head
+
+'''
+61. Rotate List
+'''
+        
+# def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+
+        
+#         if not head:
+#             return head
+            
+#         count=1
+#         ptr=head
+#         while(ptr.next):
+#             ptr=ptr.next
+#             count+=1
+
+#         k=k%count
+#         ptr.next=head
+#         new_end=count-k
+#         ptr=head
+
+#         while(new_end>1):
+#             ptr=ptr.next
+#             new_end-=1
+
+#         head=ptr.next
+#         ptr.next=None
+        
+#         return head
+#------------------------------------------
+# Another way Not optimal:
+
+ # if not head or k==0:
+        #     return head
+        # count=0
+        # ptr=head
+        # while(ptr):
+        #     ptr=ptr.next
+        #     count+=1
+        # print(count)
+        # # print(count)
+        # k=k%count
+        # if count==1 or k==0:
+        #     return head
+        # head=self.reverseList(head,1,count)
+        # head=self.reverseList(head,1,k)
+        # head=self.reverseList(head,k+1,count)
+        # return head
+    
+    # def reverseList(self,head,left,right):
+
+    #     if not head or left==right :
+    #         return head
+        
+    #     prev=None
+    #     curr=head
+
+    #     while(left>1):
+    #         prev=curr
+    #         curr=curr.next
+    #         left,right=left-1,right-1
+
+    #     con,tail=prev,curr
+    #     while(right and curr):
+    #         nn=curr.next
+    #         curr.next=prev
+    #         prev=curr
+    #         curr=nn
+    #         right-=1
+        
+    #     if con:
+    #         con.next=prev
+    #     else:
+    #         head=prev
+        
+    #     tail.next=curr
+    #     return head
+
+'''
+1290. Convert Binary Number in a Linked List to Integer
+'''
+# def getDecimalValue(self, head: ListNode) -> int:
+
+#         ptr=head
+#         n=0
+#         while(ptr):
+#             ptr=ptr.next
+#             n+=1
+
+#         ptr=head
+#         dec=0
+#         while(ptr):
+#             if ptr.val==1:
+#                 dec+=2**(n-1)
+            
+#             n-=1
+#             ptr=ptr.next
+        
+#         return(dec)
+
+
+#---------------------------------
+
+        # dec=head.val
+        # while(head.next):
+        #     dec=dec*2+head.next.val
+        #     head=head.next
+        
+        # return dec
+
+'''
+19. Remove Nth node from end of list.
+'''
+# def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+
+
+#         if not head:return head
+#         count=n
+
+#         dummy=ListNode()
+#         dummy.next=head
+
+#         prev=dummy
+#         slow,fast=head,head
+
+#         while(count>0):
+#             fast=fast.next
+#             count-=1
+        
+#         while fast:
+#             prev=slow
+#             slow=slow.next
+#             fast=fast.next
+
+#         prev.next=prev.next.next
+
+#         return dummy.next
+
+'''
+82. Remove Duplicates from sorted list 2
+'''
+#         dummy=ListNode()
+#         dummy.next=head
+
+#         prev=dummy
+
+#         while head and head.next:
+#             if head.val!=head.next.val:
+#                 prev=head
+#                 head=head.next
+#             else:
+                
+#                 while(head and head.next and head.val==head.next.val):
+#                     head=head.next
+#                 head=head.next
+#                 prev.next=head
+
+#         return(dummy.next)
+
+'''
+2. Add 2 numbers
+'''
+
+# def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+
+#         dummy=ListNode()
+#         curr=dummy
+#         carry=0
+
+#         while l1 or l2 or carry:
+#             val1=l1.val if l1 else 0
+#             val2=l2.val if l2 else 0
+
+#             val=val1+val2+carry
+#             carry=val//10
+#             val=val%10
+
+#             newNode=ListNode(val)
+
+#             curr.next=newNode
+#             curr=curr.next
+
+#             l1=l1.next if l1 else 0
+#             l2=l2.next if l2 else 0
+        
+#         return dummy.next
+
+'''
+86. Partition List
+'''
+
+#  def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
+
+#         h1=small=ListNode()
+#         h2=large=ListNode()
+
+#         while(head):
+
+#             if head.val<x:
+                
+#                 small.next=head
+#                 small=small.next
+
+#             else:
+                
+#                 large.next=head
+#                 large=large.next
+            
+#             head=head.next
+        
+#         large.next=None
+#         small.next=h2.next
+
+'''
+21. Merge 2 sorted lists
+'''
+
+# def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        
+#         head=ListNode()
+#         curr=head
+
+#         while(list1 and list2):
+
+#             if list1.val<list2.val:
+#                 curr.next=list1
+#                 curr=curr.next
+#                 list1=list1.next
+            
+#             else:
+#                 curr.next=list2
+#                 curr=curr.next
+#                 list2=list2.next
+            
+#         curr.next=list1 or list2
+
+#         return head.next
+
+'''
+25. Reverse Nodes in k groups
+'''
+# def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+
+#         if not head or not head.next: return head
+
+#         prev=None
+#         curr=head
+
+#         count_ptr=head
+#         node_count=0
+
+#         while(count_ptr):
+#             while(node_count<k and count_ptr):
+#                 node_count+=1
+#                 count_ptr=count_ptr.next
+            
+#             if node_count==k:
+#                 con,tail=prev,curr
+#                 while(node_count>0):
+#                     nn=curr.next
+#                     curr.next=prev
+#                     prev=curr
+#                     curr=nn
+#                     node_count-=1
+                
+#                 if con:
+#                     con.next=prev
+#                 else:
+#                     head=prev
+
+#                 tail.next=curr
+#                 prev=tail
+
+#         return head
+
+'''
+383. Ransom Note
+'''
+# def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        
+#         ransom=collections.Counter(ransomNote)
+#         mag=collections.Counter(magazine)
+
+#         for i in ransom:
+            
+#             if ransom[i]>mag[i]:
+#                 return False
+#         return True
+
+
+'''
+128.  Longest Consecutive Sequence
+'''
+# def longestConsecutive(self, nums: List[int]) -> int:
+
+#         numset=set(nums)
+#         max_seq=0
+
+#         for num in numset:
+#             if num-1 not in numset:
+#                 seq=1
+#                 curr=num
+#                 while curr+1 in numset:
+#                     seq+=1
+#                     curr+=1
+                
+#                 max_seq=max(max_seq,seq)
+#         return max_seq
+
+'''
+219. Contains Duplicate 2
+'''
+
+#  def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+
+#         index={}
+#         for i in range(len(nums)):
+#             if nums[i] in index:
+#                 if abs(i-index[nums[i]])<=k:
+#                     return True
+                
+#             index[nums[i]]=i
+        
+#         return False
+
+'''
+205. Isomorphic Strings
+'''
+
+# def isIsomorphic(self, s: str, t: str) -> bool:
+#         # s_ind=[]
+#         # t_ind=[]
+
+#         # for i in s:
+#         #     s_ind.append(s.index(i))
+        
+#         # for i in t:
+#         #     t_ind.append(t.index(i))
+        
+
+#         # if s_ind==t_ind:
+#         #     return True
+#         # return False
+
+#         s_map={}
+#         t_map={}
+
+#         for i in range(len(s)):
+#             if s[i] not in s_map and t[i] not in t_map:
+#                 s_map[s[i]]=t[i]
+#                 t_map[t[i]]=s[i]
+            
+#             elif s_map.get(s[i])!=t[i] or t_map.get(t[i])!=s[i]:
+#                 return False
+        
+#         return True
+
+'''
+202. Happy Number
+'''
+
+# def isHappy(self, n: int) -> bool:
+
+#         num=n
+#         numsum=set()
+        
+#         while(num!=1 and num not in numsum):
+#             numsum.add(num)
+#             digi_sq_sum=0
+#             while(num!=0):
+#                 rem=num%10
+#                 digi_sq_sum+=rem*rem
+#                 num=num//10
+#             num=digi_sq_sum
+        
+#         if num==1:
+#             return True
+#         return False
+
+#######################################################################
+
+'''
+Stacks:
+'''
+
+'''
+20. Valid Parenthesis
+'''
+
+# def isValid(self, s: str) -> bool:
+
+#         stack=[]
+#         pairs={'(':')','{':'}','[':']'}
+
+#         for i in s:
+#             if i in pairs:
+#                 stack.append(pairs[i])
+#             else:
+#                 if not stack:
+#                     return False
+#                 elif i==stack[-1]:
+#                     stack.pop()
+#                 else:
+#                     return False
+        
+#         return not stack 
+
+'''
+
+'''
