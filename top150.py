@@ -1283,5 +1283,189 @@ Stacks:
 #         return not stack 
 
 '''
+71. Simplify Path
+'''
+
+# def simplifyPath(self, path: str) -> str:
+
+#         stack=[]
+#         for i in (path.split('/')):
+#             if i=='..':
+#                 if stack:
+#                     stack.pop()
+#             elif i=='.' or i=='':
+#                 continue
+#             else:
+#                 stack.append(i)
+
+#         return '/'+'/'.join(stack) 
 
 '''
+155. Min Stack
+'''
+
+class MinStack:
+
+    def __init__(self):
+        self.stack=[]
+        
+    def push(self, val: int) -> None:
+        if not self.stack:
+            self.stack.append([val,val])
+            return
+        curr_min=self.stack[-1][1]
+        self.stack.append([val,min(val,curr_min)])
+        
+    def pop(self) -> None:
+        self.stack.pop()
+
+    def top(self) -> int:
+        return self.stack[-1][0]
+
+    def getMin(self) -> int:
+        return self.stack[-1][1]
+    
+'''
+150. Evaluate Reverse Polish Notation
+'''
+
+#  def evalRPN(self, tokens: List[str]) -> int:
+
+#         stack=[]
+#         op=['+','/','-','*']
+#         for tok in tokens:
+#             if tok in op:
+                
+#                 op1=stack.pop()
+#                 op2=stack.pop()
+                
+#                 if tok=='+':
+#                     stack.append(op1+op2)
+#                 elif tok=='*':
+#                     stack.append(op1*op2)
+#                 elif tok=='-':
+#                     stack.append(op2-op1)
+#                 elif tok=='/':
+#                     stack.append(int(op2/op1))
+#             else:
+#                 stack.append(int(tok))
+            
+#         return(stack[-1])
+
+
+#############################################################################
+
+'''
+100. Same Tree
+'''
+
+# def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        
+#         if not p and not q:
+#             return True
+#         elif not p or not q:
+#             return False
+        
+#         return p.val==q.val and self.isSameTree(p.left,q.left) and self.isSameTree(p.right,q.right)
+
+
+'''
+236. Lowest common ancestor
+'''
+# def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+
+#         # Base Case
+#         if not root:
+#             return None
+
+#         # First Case => if one of them is root, LCA cannot be after this.
+#         if p==root or q==root:
+#             return root
+
+#         left=self.lowestCommonAncestor(root.left,p,q)
+#         right=self.lowestCommonAncestor(root.right,p,q)
+
+#         # If both left right return something, then one of p and q is in left and other in right
+#         if left and right:
+#             return root 
+        
+#         # if only one of them return something, both p and q are present in the same subtree.
+#         if left:
+#             return left
+        
+#         return right
+
+'''
+101. SYmmetric tree
+'''
+# def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        
+
+#         if not root:
+#             return True
+
+#         def dfs(p,q):
+#             if not p and not q:
+#                 return True
+#             if not p or not q:
+#                 return False
+#             return p.val==q.val and dfs(p.left,q.right) and dfs(p.right,q.left)
+        
+#         return dfs(root.left, root.right)
+
+
+'''
+103. Binary Tree Zigzag Level Order Traversal
+'''
+
+# def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+#         if not root:
+#             return []
+#         level=1
+#         queue=deque([root])
+#         ans=[]
+
+#         while queue:
+#             levelnodes=[]
+#             for _ in range(len(queue)):
+#                 node=queue.popleft()
+#                 levelnodes.append(node.val)
+
+#                 if node.left:
+#                     queue.append(node.left)
+#                 if node.right:
+#                     queue.append(node.right)
+
+#             # print(levelnodes)
+#             if level%2==0:
+#                 ans.append(levelnodes[::-1])
+#             else:
+#                 ans.append(levelnodes)
+#             level+=1
+        
+#         return ans
+
+'''
+637. Average of Levels in Binary Tree
+'''
+
+# def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
+        
+#         queue=deque([root])
+#         averages=[]
+#         while queue:
+#             level_sum=0
+#             count=len(queue)
+#             for _ in range(len(queue)):
+#                 node=queue.popleft()
+#                 level_sum+=node.val
+
+#                 if node.left:
+#                     queue.append(node.left)
+#                 if node.right:
+#                     queue.append(node.right)
+
+            
+#             averages.append(level_sum/count)
+
+#         return averages

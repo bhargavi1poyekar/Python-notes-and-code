@@ -1708,5 +1708,3 @@ Substrings of size 3 with distinct characters
 #                 count+=1
             
 #         return count
-
- 

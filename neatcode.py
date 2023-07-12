@@ -234,3 +234,100 @@ Permutation in a string
 #                 boxes[box_idx].add(val)
         
 #         return True
+
+
+'''
+239. SLiding window max
+'''
+
+# def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+
+#         stack=[]
+#         ans=[]
+#         queue=collections.deque()
+
+#         for i in range(len(nums)):
+#             while queue and nums[i]>nums[queue[-1]]:
+#                 queue.pop()
+
+#             queue.append(i)
+
+#             if queue[0]+k==i:
+#                 queue.popleft()
+            
+#             if i>=k-1:
+#                 ans.append(nums[queue[0]])
+        
+#         return ans
+
+'''
+853.  Car Fleet
+'''
+# def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
+
+#         stack=[]
+
+#         for position, speed in sorted(zip(position,speed))[::-1]:
+
+#             distance=target-position
+#             time=distance/speed
+#             if not stack:
+#                 stack.append(time)
+#             elif time>stack[-1]:
+#                 stack.append(time)
+        
+#         return len(stack)
+
+########################################################
+'''
+543. Diameter of Binary Tree
+'''
+
+#  diameter=0
+#         def dfs(root):
+
+#             if not root:
+#                 return 0
+
+#             nonlocal diameter
+
+#             left=dfs(root.left)
+#             right=dfs(root.right)
+
+#             diameter=max(diameter,right+left)
+            
+#             return max(right,left)+1
+
+#         dfs(root)
+#         return diameter
+
+'''
+110. Balanced Binary Tree
+'''
+
+#  def isBalanced(self, root: Optional[TreeNode]) -> (bool,int):
+
+#         def bottom_up(root):
+#             if not root:
+#                 return True,0
+
+#             # def depth(root):
+#             #     if not root:
+#             #         return 0
+#             #     left=depth(root.left)
+#             #     right=depth(root.right)
+#             #     return 1+max(left,right)
+            
+#             left_balance,left_height=bottom_up(root.left)
+
+#             if not left_balance:
+#                 return False,0
+#             right_balance,right_height=bottom_up(root.right)
+
+#             if not right_balance:
+#                 return False,0
+
+#             return abs(left_height-right_height)<=1, 1+max(left_height,right_height)
+        
+        
+#         return(bottom_up(root)[0])
